@@ -25,8 +25,28 @@ const enronData = [
     { size: 20, count: 6 }
 ];
 
-// Wiki-Vote Dataset (Replace with actual values)
+// Wiki-Vote Dataset
 const wikiData = [
+    { size: 2, count: 8655 },
+    { size: 3, count: 13718 },
+    { size: 4, count: 27292 },
+    { size: 5, count: 48416 },
+    { size: 6, count: 68872 },
+    { size: 7, count: 83266 },
+    { size: 8, count: 76732 },
+    { size: 9, count: 54456 },
+    { size: 10, count: 35470 },
+    { size: 11, count: 21736 },
+    { size: 12, count: 11640 },
+    { size: 13, count: 5449 },
+    { size: 14, count: 2329 },
+    { size: 15, count: 740 },
+    { size: 16, count: 208 },
+    { size: 17, count: 23 }
+];
+
+// Third Dataset (Clone of Wiki-Vote for now)
+const asskitter = [
     { size: 2, count: 8655 },
     { size: 3, count: 13718 },
     { size: 4, count: 27292 },
@@ -61,15 +81,20 @@ export default function App() {
                     <p>Total cliques: <strong>459,002</strong></p>
                     <p>Time taken: <strong>00:00:40:228</strong></p>
                 </div>
+                <div className="info-box">
+                    <h2>As-Skitter Dataset</h2>
+                    <p>Total cliques: <strong>459,002</strong></p>
+                    <p>Time taken: <strong>00:00:40:228</strong></p>
+                </div>
             </div>
 
             <div className="chart-grid">
                 <div className="chart-container">
                     <h3>Email-Enron Dataset</h3>
-                    <ResponsiveContainer width="100%" height={400}>
+                    <ResponsiveContainer width="100%" height={350}>
                         <BarChart data={enronData}>
                             <XAxis dataKey="size" label={{ value: "Clique Size", position: "insideBottom", offset: -5 }} />
-                            <YAxis label={{ value: "Count", angle: -90, position: "insideLeft",offset: -20 }} />
+                            <YAxis label={{ value: "Count", angle: -90, position: "insideLeft",offset: -15 }} />
                             <Tooltip />
                             <Legend />
                             <Bar dataKey="count" fill="#8884d8" />
@@ -79,13 +104,26 @@ export default function App() {
 
                 <div className="chart-container">
                     <h3>Wiki-Vote Dataset</h3>
-                    <ResponsiveContainer width="100%" height={400}>
+                    <ResponsiveContainer width="100%" height={350}>
                         <BarChart data={wikiData}>
                             <XAxis dataKey="size" label={{ value: "Clique Size", position: "insideBottom", offset: -5 }} />
-                            <YAxis label={{ value: "Count", angle: -90, position: "insideLeft",offset: -20 }} />
+                            <YAxis label={{ value: "Count", angle: -90, position: "insideLeft",offset: -15 }} />
                             <Tooltip />
                             <Legend />
                             <Bar dataKey="count" fill="#82ca9d" />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
+                
+                <div className="chart-container">
+                    <h3>As-Skitter Dataset</h3>
+                    <ResponsiveContainer width="100%" height={350}>
+                        <BarChart data={asskitter}>
+                            <XAxis dataKey="size" label={{ value: "Clique Size", position: "insideBottom", offset: -5 }} />
+                            <YAxis label={{ value: "Count", angle: -90, position: "insideLeft",offset: -15 }} />
+                            <Tooltip />
+                            <Legend />
+                            <Bar dataKey="count" fill="#ff8042" />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>

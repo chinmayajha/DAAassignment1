@@ -20,37 +20,50 @@ body {
 /* Dataset info boxes */
 .dataset-info {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
 .info-box {
     background: #e0e0e0;
     padding: 15px;
     border-radius: 10px;
-    width: 40%;
+    width: 30%;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 /* Grid for Charts */
 .chart-grid {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 /* Chart Containers */
 .chart-container {
-    width: 48%;
+    width: 32%;
     height: 450px;
     background: white;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive for smaller screens */
+@media (max-width: 1100px) {
+    .chart-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .chart-container {
+        width: 48%;
+        margin-bottom: 20px;
+    }
+}
+
 @media (max-width: 900px) {
     .chart-grid {
         flex-direction: column;
